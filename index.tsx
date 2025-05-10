@@ -20,14 +20,12 @@ export class Plugin<T> {
         this.stateRef = {current: state}
     }
 
-
-
     public async init() {
         console.log(`Initialize plugin: ${this.name}`)
     }
 
-    public saveState(state: T): string {
-        return JSON.stringify(state)
+    public saveState(): string {
+        return JSON.stringify(this.stateRef.current)
     }
 
     public loadState(pluginState: T) {
