@@ -18,6 +18,7 @@ export class Plugin<T> {
         this.version = config.version
         this.exposes = config.exposes
         this.stateRef = {current: state}
+        this.saveState = this.saveState.bind(this)
     }
 
     public async init() {
