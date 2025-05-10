@@ -19,6 +19,9 @@ export class Plugin<T> {
         this.exposes = config.exposes
         this.stateRef = {current: state}
         this.saveState = this.saveState.bind(this)
+        this.loadState = this.loadState.bind(this)
+        this.init = this.init.bind(this)
+        this.render = this.render.bind(this)
     }
 
     public async init() {
