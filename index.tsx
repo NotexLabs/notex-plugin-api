@@ -22,15 +22,15 @@ export class Plugin<T> {
         console.log(`Initialize plugin: ${this.name}`)
     }
 
-    public async saveState(): Promise<string> {
+    public saveState(): string {
         return ""
     }
 
-    public async loadState(pluginState: T) {
+    public loadState(pluginState: T) {
 
     }
 
-    public async render(): Promise<React.JSX.Element> {
+    public render(): React.JSX.Element {
         const App: React.FC = () => {
             return (<div>Hello from {this.name} plugin</div>)
         }
