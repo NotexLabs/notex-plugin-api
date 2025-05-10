@@ -20,8 +20,8 @@ export class Plugin {
         console.log(`Initialize plugin: ${this.name}`)
     }
 
-    public async saveState() {
-
+    public async saveState(): Promise<string> {
+        return ""
     }
 
     public async loadState(pluginState: Object) {
