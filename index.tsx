@@ -5,25 +5,29 @@ export interface iPluginConfig {
     version: string,
     exposes: string[]
 }
+
+
 export class Plugin<T> {
     protected name: string
     protected version: string
     protected exposes: string[]
+    public stateRef: {current: T}
 
-    constructor(config: iPluginConfig) {
+    constructor(config: iPluginConfig, state: T) {
         this.name = config.name
         this.version = config.version
         this.exposes = config.exposes
+        this.stateRef = {current: state}
     }
 
-    public state: T | null = null
+
 
     public async init() {
         console.log(`Initialize plugin: ${this.name}`)
     }
 
-    public saveState(): string {
-        return ""
+    public saveState(state: T): string {
+        return JSON.stringify(state)
     }
 
     public loadState(pluginState: T) {

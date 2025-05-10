@@ -1,6 +1,6 @@
 {
   "name": "notex-plugin-api",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "module": "index.tsx",
   "type": "module",
   "devDependencies": {
