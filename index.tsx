@@ -28,8 +28,8 @@ export class Plugin<T> {
         console.log(`Initialize plugin: ${this.name}`)
     }
 
-    public saveState(): string {
-        return JSON.stringify(this.stateRef.current)
+    public saveState(): T {
+        return this.stateRef.current
     }
 
     public loadState(pluginState: T) {
