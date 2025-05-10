@@ -5,7 +5,7 @@ export interface iPluginConfig {
     version: string,
     exposes: string[]
 }
-export class Plugin {
+export class Plugin<T> {
     protected name: string
     protected version: string
     protected exposes: string[]
@@ -16,6 +16,8 @@ export class Plugin {
         this.exposes = config.exposes
     }
 
+    public state: T | null = null
+
     public async init() {
         console.log(`Initialize plugin: ${this.name}`)
     }
@@ -24,7 +26,7 @@ export class Plugin {
         return ""
     }
 
-    public async loadState(pluginState: Object) {
+    public async loadState(pluginState: T) {
 
     }
 
